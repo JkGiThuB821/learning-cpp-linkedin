@@ -2,8 +2,10 @@
 // Exercise 02_11
 // Type Casting Examples, by Eduardo Corpeño 
 
+//in c++ u can declare variables anywhere in the code but in c u ll need to do that in the beginning 
 #include <iostream>
 #include <cstdint>
+
 
 int main(){
     int fahrenheit = 100;

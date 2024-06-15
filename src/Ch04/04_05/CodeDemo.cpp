@@ -9,6 +9,7 @@
 int main(){
     float GPA = 0.0f;
     int id;
+    int totalCredits = 0;
     
     std::vector<Student> students = {Student(1, "George P. Burdell"),
                                     Student(2, "Nancy Rhodes")};
@@ -26,9 +27,58 @@ int main(){
 
     // Calculate the GPA for the selected student.
     // Write your code here
+    for(auto grade:grades){
+        if(grade.get_student_id() == id){
+            int courseId = grade.get_course_id();
+            auto gradeChar = grade.get_grade();
+            int gradeNum;
+            switch (gradeChar)
+            {
+            case 'A':
+                gradeNum = 4;
+                break;
+            case 'B':
+                gradeNum = 3;
+                break;
+            case 'C':
+                gradeNum = 2;
+                break;
+            
+            default:
+                break;
+            }
+
+        switch (courseId)
+        {
+        case 1:
+            GPA += gradeNum*5;
+            totalCredits += 5;
+            break;
+        case 2:
+            GPA += gradeNum*4;
+            totalCredits += 4;
+            break;
+        case 3:
+            GPA += gradeNum*3;
+            totalCredits += 3;
+            break;
+        case 4:
+            GPA += gradeNum*4;
+            totalCredits += 4;
+            break;
+        default:
+            break;
+        }
+
+        }
+        
+    }
+    std::cout << "GPA debug: " << GPA << std::endl;
+    GPA /= totalCredits;
+
 
     std::string student_str;
-    student_str = students[0].get_name(); // Change this to the selected student's name
+    student_str = students[id-1] .get_name(); // Change this to the selected student's name
 
     std::cout << "The GPA for " << student_str << " is " << GPA << std::endl;
     
