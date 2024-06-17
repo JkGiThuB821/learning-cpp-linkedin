@@ -12,6 +12,7 @@ public:
     Student(int the_id, std::string the_name);
     int get_id() const;
     std::string get_name() const;
+    std::string get_name_from_id(int) const;
 };
 
 class Course{
@@ -25,6 +26,8 @@ public:
     int get_id() const;
     std::string get_name() const;
     int get_credits() const;
+    //std::string get_course_name_from_id(int) const;
+    //std::string get_courses_for_student() const;
 };
 
 class Grade{
@@ -56,4 +59,5 @@ public:
     std::string get_student_name(int) const;
     unsigned char get_course_credits(int) const;
     float get_GPA(int) const;
+    void report_card(int);
 };

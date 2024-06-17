@@ -27,7 +27,8 @@ int main(){
 
     // Calculate the GPA for the selected student.
     // Write your code here
-    for(auto grade:grades){
+    //using a ref (Grade&) instead of Grade because objects store a lot of memory 
+    for(Grade& grade:grades){
         if(grade.get_student_id() == id){
             int courseId = grade.get_course_id();
             auto gradeChar = grade.get_grade();
